@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chuyến xe hoa 3D mang lời chúc mừng ngày Phụ nữ Việt Nam 20/10 đến tất cả mọi người."
+    />
+    <meta name="theme-color" content="#f8cbd4" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Chuyến xe hoa 20/10</title>
+  </head>
+  <body>
+    <button class="skip-button" id="skipJourney" type="button">Bỏ qua chuyển động</button>
+
+    <div class="opening" id="opening">
+      <div class="opening__sparkles" aria-hidden="true">
+        <span>✦</span><span>✧</span><span>✦</span><span>✧</span>
+      </div>
+      <div class="opening__card">
+        <div class="opening__edge" aria-hidden="true"></div>
+        <p class="opening__eyebrow">Một món quà nhỏ dành cho tất cả mọi người</p>
+        <h1>
+          <span>Chuyến xe hoa</span>
+          <strong>20/10</strong>
+        </h1>
+        <p class="opening__copy">
+          Chạm để bắt đầu hành trình qua khu vườn yêu thương và đón nhận một lời chúc thật dịu dàng.
+        </p>
+        <button class="start-button" id="startJourney" type="button">
+          <span>Khởi hành</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13M13 7l5 5-5 5" />
+          </svg>
+        </button>
+        <p class="opening__sound-note">
+          <span aria-hidden="true">♪</span> Nhạc nền dịu nhẹ sẽ bắt đầu cùng chuyến xe
+        </p>
+      </div>
+    </div>
+
+    <main class="scene" id="scene" aria-labelledby="sceneTitle">
+      <div class="sky" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="cloud cloud--one"><i></i><i></i><i></i></div>
+        <div class="cloud cloud--two"><i></i><i></i><i></i></div>
+        <div class="sky-petal sky-petal--1"></div>
+        <div class="sky-petal sky-petal--2"></div>
+        <div class="sky-petal sky-petal--3"></div>
+      </div>
+
+      <header class="scene-header">
+        <div class="scene-brand">
+          <span aria-hidden="true">❀</span>
+          <p>Hành trình của những đóa hoa</p>
+        </div>
+        <button class="music-toggle" id="musicToggle" type="button" aria-pressed="true">
+          <span class="music-toggle__icon" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+          <span id="musicLabel">Nhạc: bật</span>
+        </button>
+      </header>
+
+      <section class="scene-title" aria-label="Chúc mừng ngày Phụ nữ Việt Nam 20 tháng 10">
+        <p>Ngày Phụ nữ Việt Nam</p>
+        <h2 id="sceneTitle">
+          <span>Chúc mừng ngày</span>
+          <strong>20 · 10</strong>
+        </h2>
+      </section>
+
+      <div class="world" aria-hidden="true">
+        <div class="hill hill--far"></div>
+        <div class="hill hill--near"></div>
+        <div class="tree-line">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="meadow meadow--back"></div>
+        <div class="garden-layer garden-layer--back" id="gardenBack"></div>
+
+        <div class="road">
+          <div class="road__edge road__edge--top"></div>
+          <div class="road__marks"></div>
+          <div class="road__edge road__edge--bottom"></div>
+        </div>
+
+        <div class="garden-layer garden-layer--front" id="gardenFront"></div>
+        <div class="meadow meadow--front"></div>
+
+        <div class="car" id="car">
+          <div class="car__flowers">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="car__flag">20/10</div>
+          <img src="image/car2.gif" alt="" />
+          <div class="car__shadow"></div>
+        </div>
+      </div>
+
+      <div class="journey-note" aria-live="polite">
+        <span class="journey-note__dot"></span>
+        <p id="journeyStatus">Chuyến xe đang chờ lệnh khởi hành…</p>
+      </div>
+
+      <div class="letter-rain" id="letterRain" aria-hidden="true"></div>
+      <p class="letter-hint" id="letterHint" aria-hidden="true">
+        <span aria-hidden="true">✉</span>
+        Chọn một lá thư để mở lời chúc
+      </p>
+
+      <section class="wish-overlay" id="wishOverlay" aria-hidden="true" aria-labelledby="wishTitle">
+        <div class="wish-card">
+          <div class="wish-card__depth" aria-hidden="true"></div>
+          <div class="wish-card__date" aria-hidden="true">
+            <span>Ngày Phụ nữ Việt Nam</span>
+            <strong>20</strong>
+            <em>tháng 10</em>
+            <div class="wish-card__mini-flowers">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="wish-card__message">
+            <p class="wish-card__eyebrow">Gửi đến tất cả những người phụ nữ tuyệt vời</p>
+            <h2 id="wishTitle" tabindex="-1">Chúc mừng ngày 20/10!</h2>
+            <p>
+              Xin gửi lời chúc tốt đẹp nhất đến tất cả chị em. Chúc mọi người luôn xinh đẹp,
+              tự tin, mạnh mẽ và giữ được nụ cười rạng rỡ trên môi.
+            </p>
+            <p>
+              Mong mỗi ngày đều ngập tràn niềm vui, bình an, hạnh phúc; mọi cố gắng luôn được
+              ghi nhận và mọi người luôn được yêu thương, trân trọng theo cách xứng đáng nhất.
+            </p>
+            <p class="wish-card__signature">Chúc một ngày 20/10 thật trọn vẹn và nhiều hoa! ♡</p>
+            <div class="wish-card__actions">
+              <button class="card-button card-button--primary" id="moreFlowers" type="button">
+                Nở thêm hoa
+              </button>
+              <button class="card-button" id="replayJourney" type="button">Xem lại hành trình</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="petal-stage" id="petalStage" aria-hidden="true"></div>
+
+      <footer class="scene-footer">
+        <span>Made with love</span>
+        <strong>20 · 10 · 2026</strong>
+      </footer>
+    </main>
+  </body>
+</html>
